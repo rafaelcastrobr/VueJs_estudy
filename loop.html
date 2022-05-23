@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olá, Vue.js</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+
+<body>
+
+  <div id="app">
+    <ul v-if="verifica" v-for="lista in listas">
+      <li>ID <b>{{lista.id}}</b></li>
+      <li>Nome: <b>{{lista.nome}}</b></li>
+      <li>Idioma: <b>{{lista.idioma}}</b></li>
+    </ul>
+    <p v-else>Não Há Nenhum Dado</p>
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        listas: [
+          {
+            id: 1,
+            nome: 'Rafael Castro',
+            idioma: 'Português'
+          },
+          {
+            id: 2,
+            nome: 'Mob',
+            idioma: 'Inglês'
+          },
+          {
+            id: 3,
+            nome: 'And',
+            idioma: 'Italiano'
+          }
+        ],
+        verifica: true
+      }
+    });
+  </script>
+</body>
+
+</html>
